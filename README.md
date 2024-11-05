@@ -6,7 +6,7 @@ Hint is a thin wrapper around simple-term-menu. It comes with menus providing a 
 
 To set it up:
 
-1. Download the project to somewhere and run setup.py. It will set up the python environment ask you if you want to set up your .bashrc for hint. This will add the following lines to the end of your .bashrc:
+1. Download the project to somewhere and run setup.py. It will set up the python environment and ask you if you want to set up your .bashrc for hint. This will add the following lines to the end of your .bashrc:
 ```
 HINT_DIR=~/path/to/hint
 source $HINT_DIR/hint.sh
