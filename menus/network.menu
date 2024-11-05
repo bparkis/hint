@@ -1,0 +1,10 @@
+sudo nethogs # find which program is using bandwidth
+host myip.opendns.com resolver1.opendns.com # public IP address
+hostname -I # local IP and IPv6 addresses
+ip -6 addr # local IPv6 address
+nmap 127.0.0.1 # what ports are open
+sudo ss -lnp # what programs are listening on what ports
+ip link show # show if names
+networkctl # show interfaces
+ip link set enp0s31f6 up
+ip link set enp0s31f6 down

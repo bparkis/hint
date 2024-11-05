@@ -1,0 +1,9 @@
+sudo service --status-all # list status of all services
+watch -n 0.1 'date +%s.%N' # view a timer
+sudo kill -USR1 $(pgrep ^dd$)
+sudo strace -f -p <pid> &>foo.txt # files opened by a process or its children
+dwebp in.webp -o out.png # convert webp to png
+pstree -s <pid> # show tree of parents and children of a process
+locate emacs.desktop # find the emacs.desktop file
+alias # show all aliases currently in effect
+sudo mount -t cifs -o ro,username=user,password=somepassword //192.168.1.199/Public Public # mount a remote samba share

@@ -1,0 +1,2 @@
+sudo mount /dev/sda1 /mnt # step 1 reinstall grub (if /dev/sda1 is ubuntu install point)
+sudo grub-install --root-directory=/mnt/ /dev/sda # step 2 reinstall grub

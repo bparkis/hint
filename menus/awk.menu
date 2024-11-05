@@ -1,0 +1,12 @@
+ls -l | awk 'BEGIN { print "File\tOwner"} {if (NR>1) print $9, "\t", $3} END {print "- DONE -"}' # select columns from ls
+awk '/foo/' RS="\n\n" # the paragraph containing foo
+awk 'BEGIN {x=5} {print x, $x}' # variable usage
+awk '{$2=""; print $0}' # delete the second column of every line
+awk '{if(/foo/){print}}' print every line that matches foo, without using $0
+awk -F: '{print $2}' # cmd line option to change FS
+awk 'BEGIN{FS="<>"} {print $2}'
+awk 'BEGIN{OFS=":";print 1,2}' # print 1:2
+ls -l | awk '{username[$3]++;} END {for (i in username) {print username[i], i;}}' # total up files owned by each user. (field 3 is username)
+awk 'NR==1{startA=$1; startB=$2} END {print ($1 - startA), ($2-startB)}' # print the difference between the last and first elements # for numeric columns 1 and 2
+ls -l | awk '$6="Oct"{print}' # print files modified in October
+ls -l --time-style long-iso | awk '$6~/^2023-/{print}' # print files modified in 2023

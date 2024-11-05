@@ -1,0 +1,28 @@
+sed 's/day/night/g'
+sed 's_usr/local/bin_/common/bin_g'
+for i in * ; do sed -i .bak 's/foo/bar' ; done # replace foo with bar in every file in the directory # saving backups with the .bak extension
+sed -i 's/cat/dog/g' animals.txt # work in-place
+sed -i '/^$/d' infile.txt # delete blank lines in-place
+sed -r 's/[0-9]+/(&)/g' # & substitution of whole match # (put numbers in parentheses)
+sed 's/\([a-z]*\).*/\1/' # keep the first lowercase word of each line,# discarding the rest of the line
+sed -r 's/([a-z]+) ([a-z]+)/\2 \1/' # swap the order of the first two nonempty space-separated # lowercase words of the line (extended regex)
+sed -r 's/([a-z]+) \1/\1/g' # unduplicate all duplicated lowercase words (extended)
+sed -n '/pattern/ p' # lines matching pattern (like grep) # -n suppresses automatic line printing
+sed -n '/pattern/ !p' # print all lines that do not match pattern
+sed -r '/([^,]*,){4}dog/ s/[^,]*/cat/4' # replace the fourth comma-separated field/column of each line # with the word "cat" provided the fifth comma-separated field # is "dog."
+sed -n -e '/^[0-9]*[02468] / w even' -e '/^[0-9]*[13579] / w odd' # write all lines that start with an even number followed by a # space to the file "even" and all lines that start with an odd # number to the file "odd"
+sed 's/^#.*//' f1 f2 f3 | grep -v '^$' | wc -l # count non-comment lines
+sed -f sedscript.txt # execute a sed script
+sed -r '3 s/[0-9]+//' # delete the first number on line 3
+sed -r '100,$ s/[0-9]+//' # delete the first number from line 100 to the end of the file
+sed '1,/start/ s/#.*//' # remove comments from the beginning of a file # until the keyword "start" appears:
+sed '1,/^$/ d' # print the input that follows the first blank line
+sed '11 q' # print the top 10 lines using the quit command to stop
+sed '/./{H;$!d};x;/cat/!d' # print paragraphs that contain "cat"
+sed '/cat/ =' # print line numbers of lines that contain "cat"
+sed -n '/^$/ b para;H;$ b para; b; :para x;/cat/ p' # print paragraphs that contain "cat" # using a label :para for flow control
+sed ':a ; s/([^()]*)// ; t a' # delete all matching pairs of parentheses and their contents
+sed '/\n/!G;s/\(.\)\(.*\n\)/&\2\1/;//D;s/.//' # reverse a string
+sed '1~2 p' # print odd numbered lines
+sed "s/[^[:space:]]/x/g" # replace all non-whitespace with "x"
+sed -r "s/(.{80})/\1\n/g" # cut lines every 80 characters

@@ -1,0 +1,11 @@
+cat /var/log/auth.log # ssh login attempts
+cat /var/log/auth.log.1
+sudo dmesg --human # kernel ring buffer
+sudo dmesg --human --level=warn+
+less /var/log/kern.log
+zcat # view a .gz log file without extracting
+zless
+zgrep # searches in .gz as well as non-.gz logs # recommend export GREP=/usr/bin/egrep in .bashrc
+cd /var/log/apt && export GREP=/usr/bin/egrep && zgrep "Commandline: apt(-get)? install" * # programs manually installed
+cd /var/log/apt && export GREP=/usr/bin/egrep && zgrep "Commandline: apt(-get)? remove" * # programs manually removed
+sudo emacs -nw /etc/logrotate.d/apt # change the "rotate 12" (logs older than 12 months are lost) to "rotate 72" or something

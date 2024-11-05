@@ -1,0 +1,20 @@
+git init # create a repository
+git clone /path/to/repository
+git restore path/to/file # restore local file to match repository
+git status
+emacs -nw .gitignore
+git add <file>
+ssh -T git@github.com # test connection works
+git remote add origin git@github.com:user/project.git
+git clone git@github.com:user/project.git
+git clone https://github.com/user/project
+git commit -m "Comment"
+git push
+git log # shows commits
+git config --local user.name "My name"
+git config --local user.email "My email"
+git checkout -b Excelsior # create a new branch called Excelsior
+git branch # see local branches
+git submodule add https://github.com/GodotNativeTools/godot-cpp # initialize a submodule
+cd godot-cpp
+git submodule update --init --recursive

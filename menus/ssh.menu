@@ -1,0 +1,10 @@
+sudo emacs -nw /etc/ssh/ssh_config # system ssh client config
+sudo emacs -nw /etc/ssh/sshd_config # system ssh server config
+emacs -nw ~/.ssh/ssh_config
+sudo ss -lnp | grep sshd # what port is sshd listening to?
+ssh -L 5900:localhost:5900 joe@server # forward port 5900 to localhost:5900
+cat foo | ssh bar "cat > foo"
+ssh bar "cat foo" > foo
+ssh-keygen -t ed25519 -C "your_email@example.com"
+cat id_ed25519.pub >> ~/.ssh/authorized_keys
+cat /var/log/auth.log # ssh login attempts

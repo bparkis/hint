@@ -1,0 +1,16 @@
+gpg --gen-key
+gpg --output ~/revocation.crt --gen-revoke your_email@address.com # create a revocation certificate when creating the key # put it in a safe place to use in case your key gets compromised
+chmod 600 ~/revocation.crt
+gpg --import name_of_pub_key_file
+gpg --keyserver pgp.mit.edu  --search-keys search_parameters
+gpg --fingerprint your_email@address.com # compare fingerprints to ensure the pubkey you received/sent # is correct
+gpg --sign-key email@example.com # indicate that you trust the person is who they claim to be
+gpg --output ~/signed.key --export --armor email@example.com # output the signed key so you can send it back to the person
+gpg --import ~/signed.key # the person imports the signed key so they can later prove # that you trust they are who they say they are
+gpg --output ~/mygpg.key --armor --export your_email@address.com # export the public key to send it to people
+gpg --list-keys your_email@address.com # get pub_key_id
+gpg --send-keys --keyserver pgp.mit.edu pub_key_id # upload key to a keyserver
+gpg --encrypt --sign --armor -r email@address.com file.txt # encrypt file.txt with the recipient's pubkey, signs it with # your privkey, outputs in text format. add another -r your_email # to also send it to yourself.
+gpg file_name # decrypt a message
+gpg --refresh-keys # fetch new information from the key servers if keys were outdated
+gpg --keyserver key_server --refresh-keys

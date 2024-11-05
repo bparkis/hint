@@ -1,0 +1,2 @@
+rsync -av t:v/code/hint ~/v/code # get hint
+source .bashrc

@@ -1,0 +1,18 @@
+sudo fdisk -l # show partition tables of all attached devices
+sudo gparted
+sudo VBoxManage createmedium disk --filename=system76_3.vmdk --variant=RawDisk --format=VMDK --property RawDrive=/dev/sdc # create virtualbox image from physical hard disk
+ls /dev/disks/by-uuid
+file /dev/disks/by-uuid/someuuid # helps to identify the /dev/ file for a newly plugged in device # plug it in, observe which new uuid appeared, then use this
+cat /etc/mtab # currently mounted filesystems
+blkid # block devices, perhaps not mounted
+df -h # show mounted devices with free space, and their size
+sudo lvmdiskscan
+sudo dd if=/dev/something of=something.iso bs=1M
+dd if=/dev/zero of=/some-swap-file bs=1M count=1024
+mkswap some-swap-file
+swapon some-swap-file
+dd status=progress # monitor status of ongoing dd
+sudo mkfs -t ext4 /dev/something
+cat /etc/fstab
+fsck
+cryptdisks.menu

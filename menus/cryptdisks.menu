@@ -1,0 +1,14 @@
+sudo cryptsetup open /dev/sdd5 my_encrypted_volume # open luks drive (step 1)
+sudo mount /dev/mapper/my_encrypted_volume /media/my_device # open luks drive (step 2)
+sudo lvs
+sudo udisksctl unlock -b /dev/sdd5 # open luks drive step 1 (alternate method)
+sudo udisksctl mount -b /dev/mapper/ubuntu--vg-root # open luks drive step 2
+sudo vgdisplay # show volume groups
+sudo vgrename es6whq-DN3V-E4NT-9Zp6-AQ9d-a00p-JzbFsF system76-vg # fix conflicting vg names
+sudo modprobe dm-mod # device mapper driver
+sudo vgchange -ay # activate the volume groups
+sudo lvscan # show logical volumes under volume groups
+sudo mount dev/mapper/system76--vg-root
+sudo apt install ecryptfs-utils
+sudo ecryptfs-recover-private myhomedir
+sudo mount -t ecryptfs myhomedir mountpoint

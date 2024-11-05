@@ -1,0 +1,2 @@
+crontab -l # list
+crontab -e # edit

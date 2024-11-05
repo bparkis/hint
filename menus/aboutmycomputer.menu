@@ -1,0 +1,12 @@
+cat /etc/os-release # ubuntu version
+echo $XDG_SESSION_TYPE # is Wayland or Xorg running?
+systemctl --user show-environment | grep X # gnome?
+hostnamectl # hostname, os, architecture, kernel, firmware
+uname -r # kernel
+sudo lshw
+sudo lspci
+sudo lsusb
+sudo lsraid
+uptime
+w # who's logged in, what are they doing
+lsof # every open file

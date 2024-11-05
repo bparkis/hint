@@ -1,0 +1,9 @@
+pacmd # is pulse audio daemon running?
+sudo aplay -l # list playback hardware devices
+aplay /usr/share/sounds/alsa/Front_Center.wav
+sudo aplay /usr/share/sounds/alsa/Front_Center.wav
+lspci -v | grep -A7 -i "audio" # card loaded?
+lsmod | grep snd
+alsamixer # sound levels ok?
+systemctl --user restart pipewire
+lsof | egrep -i "snd|audio" # locate open sound/audio files

@@ -1,0 +1,11 @@
+python3 -m venv # create virtual environment here
+source bin/activate # activate virtual environment here
+deactivate # deactivate the virtual environment
+env/bin/python3 myscript.py # run a script within the virtual environment
+pip3 install something=1.0.4
+pip3 install something>=1.0.4
+pip3 install --upgrade something
+pip3 show something
+pip3 install playsound --break-system-packages # don't do it
+python3 -m pip freeze > requirements.txt
+python3 -m venv && source bin/activate && pip install -r requirements.txt

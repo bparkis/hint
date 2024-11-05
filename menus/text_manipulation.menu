@@ -1,0 +1,7 @@
+cut -d ',' -f 1,3-5 test.txt # Print selected comma-separated columns
+sort test.txt | uniq -d # print lines repeated more than once
+tac # reverse lines of a file
+filename=$(echo $1 | tr -d "' ()|").txt # trim whitespace single quotes parens and pipes
+awk '/foo/' RS="\n\n" # search for the paragraph foo appears in
+sed.menu
+awk.menu

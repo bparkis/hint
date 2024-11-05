@@ -1,0 +1,4 @@
+copytotreehouse
+rsync -av *.c foo:src # transfer *.c to the src directory on machine foo
+rsync -av --exclude baz foo bar # recursively transfer foo/ to the bar/foo directory,# excluding the foo/baz directory
+rsync -avz foo:src/bar/ /data/tmp # recursively transfer src/bar/ on machine foo to /data/tmp
