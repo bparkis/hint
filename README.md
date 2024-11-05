@@ -13,8 +13,11 @@ source $HINT_DIR/hint.sh
 # export HINT_MENUS_DIR=/path/to/hint/menus
 ```
 You can say no and do this manually if you prefer.
+
 2. `source ~/.bashrc` to activate hint in your current bash session.
+
 3. Write menus like the example ones, and put them in `$HINT_MENUS_DIR`, or just rely on the example ones for now.
+
 4. Type `hint` at the bash prompt to enter the home menu and see how it works. Or `hint some_menu` to open that specific menu file directly. The path is relative to `$HINT_MENUS_DIR`, and the .menu extension is optional here.
 
 Some example menus are provided. But the idea is that you will fill your menus with the commands that you actually have a history of using, and delete what you don't need.
