@@ -95,10 +95,10 @@ if __name__ == "__main__":
         up-arrow to get them at the bash prompt, where you can edit them
         if necessary before running them.
 
-        Place commands you want to use again later in ~/v/hints/*.menu
+        Place commands you want to use again later in $HINTS_MENU_DIR/*.menu
         files, one per line. You may use # after the command, on the same
         line, to describe what it does. Additional # in your comment will
-        be treated as newlines. If you list a .menu file within another
+        be displayed as newlines. If you list a .menu file within another
         .menu file, the listed menu can be accessed as a sub-menu."""
     helptext = textwrap.dedent(helptext)
     parser = argparse.ArgumentParser(description=helptext,formatter_class=argparse.RawTextHelpFormatter, prog="hint")
