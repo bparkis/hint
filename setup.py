@@ -21,7 +21,7 @@ def setupBashrc():
         with open(bashrcFile, 'a') as f:
             f.write("\n\nHINT_DIR=" + script_dir)
             f.write("\nsource $HINT_DIR/hint.sh")
-            f.write("\n# export HINT_MENUS_DIR=" + os.path.join(script_dir, "menus") + "\n")
+            f.write("\nexport HINT_MENUS_DIR=" + os.path.join(script_dir, "menus") + "\n")
 
 if __name__ == "__main__":
     setupEnv()
