@@ -10,7 +10,7 @@ To set it up:
 ```
 HINT_DIR=~/path/to/hint
 source $HINT_DIR/hint.sh
-# export HINT_MENUS_DIR=/path/to/hint/menus
+export HINT_MENUS_DIR=~/path/to/hint/menus
 ```
 You can say no and do this manually if you prefer.
 
